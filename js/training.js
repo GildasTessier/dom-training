@@ -10,7 +10,9 @@ document.querySelector("#ex1 .button").addEventListener("click", function(){
 
 /* ------------------------------------ */
 /* --- Exercice 2 --- */
-
+const timer = setInterval (() => {
+    document.querySelector("#ex2-scroll-value").innerHTML = (scrollY)
+},100)
 
 /* ------------------------------------ */
 /* --- Exercice 3 --- */
