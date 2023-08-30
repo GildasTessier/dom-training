@@ -16,7 +16,11 @@ const timer = setInterval (() => {
 
 /* ------------------------------------ */
 /* --- Exercice 3 --- */
-
+document.querySelector("#ex3 .button").addEventListener("click", function(){
+   let itemChange = document.querySelector("#ex3-animals").firstElementChild;
+   document.querySelector("#ex3-animals").firstElementChild.remove();
+   document.querySelector("#ex3-animals").appendChild(itemChange)
+});
 
 /* ------------------------------------ */
 /* --- Exercice 4 --- */
