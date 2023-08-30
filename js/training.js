@@ -1,7 +1,7 @@
 /* ------------------------------------ */
 /* --- Exercice 1 --- */
 
-document.querySelector("#ex1 .button").addEventListener("click", function(){
+document.querySelector("#ex1 .button").addEventListener("click", () => {
     document.querySelector("#ex1 .text").classList.toggle("hidden");
 });
 
