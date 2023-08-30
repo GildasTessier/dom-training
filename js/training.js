@@ -1,5 +1,11 @@
 /* ------------------------------------ */
 /* --- Exercice 1 --- */
+function removeText (event) {
+    document.querySelector("#ex1 .text").classList.toggle("text-display");
+}
+document.querySelector("#ex1 .button").addEventListener("click", removeText)
+
+
 
 
 /* ------------------------------------ */
