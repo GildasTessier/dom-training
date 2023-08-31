@@ -72,7 +72,7 @@ textEx6 = document.querySelector("#ex6-paragraph").innerHTML
 function animateTexte(i) {
     setTimeout(function() {
         document.querySelector("#ex6-paragraph").innerHTML = textEx6.substr(0, i);
-    }, 20 * i);
+    }, 2 * i);
 }
 for (let i=0; i<textEx6.length; i++) {
     animateTexte(i);
@@ -100,6 +100,17 @@ const taskList = [
     "🌳 Tondre la pelouse"
 ];
 
+document.querySelector("#ex7-button").addEventListener("click", () => {
+    if (taskList.length > 0) {
+    let newSection = document.createElement("li")
+    newSection.classList.toggle("task-list-task")
+    newSection.innerHTML = taskList[0];
+    taskList.shift()
+    document.querySelector("#ex7-list").appendChild(newSection)
+    console.log(taskList[0])
+    }
+
+});
 
 /* ------------------------------------ */
 /* --- Exercice 8 --- */
