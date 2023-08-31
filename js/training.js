@@ -26,6 +26,29 @@ document.querySelector("#ex3 .button").addEventListener("click", function(){
 /* --- Exercice 4 --- */
 
 
+let count = 0
+// Function for add class in css for change background-color on 3 times.
+function toggleChangeColor(event) {
+    if (count === 0) {
+    this.classList.remove("button-green")
+    this.classList.toggle("button-blue");
+    count++;
+}
+else if (count === 1) {
+    this.classList.remove("button-blue");
+    this.classList.toggle("button-red")
+    count++;
+}
+else {
+    this.classList.remove("button-red")
+    this.classList.toggle("button-green")
+    count = 0;
+}
+}
+    document.querySelector("#ex4 .button").addEventListener('click', toggleChangeColor);
+
+
+
 /* ------------------------------------ */
 /* --- Exercice 5 --- */
 
