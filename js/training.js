@@ -59,17 +59,32 @@ function getRandomRgb (event) {
     }
     return `rgb(${randomColor.join(',')})`
 }
-console.log(getRandomRgb())
-
 
 for (let i of document.querySelectorAll(".flex-list .button")) {
-    console.log(i)
     i.addEventListener('mouseenter', function() {
         i.setAttribute("style",`background-color: ${getRandomRgb()};`);
 })}
 
 /* ------------------------------------ */
 /* --- Exercice 6 --- */
+textEx6 = document.querySelector("#ex6-paragraph").innerHTML
+//Function for animate text 
+function animateTexte(i) {
+    setTimeout(function() {
+        document.querySelector("#ex6-paragraph").innerHTML = textEx6.substr(0, i);
+    }, 20 * i);
+}
+for (let i=0; i<textEx6.length; i++) {
+    animateTexte(i);
+ }
+
+
+// console.log(document.querySelector("#ex6-paragraph").innerHTML.length)
+// document.querySelector("#ex6-paragraph").charAt(2).classList.toggle("hidden");
+
+// for (let i = 0; i < document.querySelector("#ex6-paragraph").innerHTML.length; i++) {
+//     document.querySelector("#ex6-paragraph").innerHTML.charAt(i).classList.remove("hidden")
+// }
 
 
 
