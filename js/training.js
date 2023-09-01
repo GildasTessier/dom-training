@@ -15,15 +15,12 @@ document.querySelector("#ex1 .button").addEventListener("click", () => {
 // },100)
 window.addEventListener('scroll', () => {
     document.querySelector("#ex2-scroll-value").innerText = (window.scrollY);
-    console.log('coucou')
 })
 
 /* ------------------------------------ */
 /* --- Exercice 3 --- */
-document.querySelector("#ex3 .button").addEventListener("click", function(){
-   let itemChange = document.querySelector("#ex3-animals").firstElementChild;
-   document.querySelector("#ex3-animals").firstElementChild.remove();
-   document.querySelector("#ex3-animals").appendChild(itemChange)
+document.querySelector("#ex3 .button").addEventListener("click", () => {
+document.querySelector("#ex3-animals").appendChild(document.querySelector("#ex3-animals > :first-child"))
 });
 
 /* ------------------------------------ */
@@ -47,8 +44,7 @@ else {
     this.classList.remove("button-red");
     this.classList.toggle("button-green");
     count = 0;
-}
-}
+}}
     document.querySelector("#ex4 .button").addEventListener('click', toggleChangeColor);
 
 
@@ -71,16 +67,17 @@ for (let i of document.querySelectorAll(".flex-list .button")) {
 
 /* ------------------------------------ */
 /* --- Exercice 6 --- */
-textEx6 = document.querySelector("#ex6-paragraph").innerHTML;
+textEx6 = document.querySelector("#ex6-paragraph").innerText;
 //Function for animate text 
 function animateTexte(i) {
     setTimeout(function() {
-        document.querySelector("#ex6-paragraph").innerHTML = textEx6.substr(0, i);
-    }, 2 * i);
+        document.querySelector("#ex6-paragraph").innerText = textEx6.substring(0, i);
+    }, 50 * i);
 }
 for (let i=0; i<textEx6.length; i++) {
     animateTexte(i);
  }
+
 
 
 // console.log(document.querySelector("#ex6-paragraph").innerHTML.length)
@@ -109,18 +106,17 @@ document.querySelector("#ex7-button").addEventListener("click", () => {
     let newSection = document.createElement("li");
     newSection.classList.toggle("task-list-task");
     newSection.innerHTML = taskList[0];
-    taskList.shift()
+    taskList.shift();
     document.querySelector("#ex7-list").appendChild(newSection);
     }
 
 });
-document.querySelector(".li").addEventListener("click", function (event){
-    console.log(coucou)
+document.querySelector("#ex7-list").addEventListener("click", function (event) {
+    newTask = event.target.innerText;
+    taskList.push(newTask);
+    event.target.remove("li");
 })
-;
-function coucou (event) {
-    console.log(coucou);
-}
+
 
 /* ------------------------------------ */
 /* --- Exercice 8 --- */
