@@ -102,21 +102,36 @@ const taskList = [
 ];
 
 document.querySelector("#ex7-button").addEventListener("click", () => {
-    if (taskList.length > 0) {
+    if (taskList.length === 0) return;
     let newSection = document.createElement("li");
-    newSection.classList.toggle("task-list-task");
-    newSection.innerHTML = taskList[0];
-    taskList.shift();
+    newSection.classList.add("task-list-task");
+    newSection.innerText = taskList.pop()
     document.querySelector("#ex7-list").appendChild(newSection);
-    }
+    
 
 });
 document.querySelector("#ex7-list").addEventListener("click", function (event) {
-    newTask = event.target.innerText;
-    taskList.push(newTask);
-    event.target.remove("li");
+    taskList.push(event.target.innerText);
+    event.target.remove();
 })
 
 
 /* ------------------------------------ */
 /* --- Exercice 8 --- */
+let countLife = 0
+let countStrength = 0
+let countShield = 0
+
+
+document.querySelector("#ex8-button-level").addEventListener("click", function (event) {
+    countLife += countLife === 100 ? 0 : 10;
+    document.querySelector("#ex8-level").style.width = countLife+"%";
+});
+document.querySelector("#ex8-button-strength").addEventListener("click", function (event) {
+    countStrength += countStrength === 100 ? 0 : 5;
+    document.querySelector("#ex8-strength").style.width = countStrength+"%";
+});
+document.querySelector("#ex8-button-shield").addEventListener("click", function (event) {
+    countShield += countShield === 100 ? 0 : 5;
+    document.querySelector("#ex8-shield").style.width = countShield+"%";
+});
