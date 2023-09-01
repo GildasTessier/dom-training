@@ -10,9 +10,13 @@ document.querySelector("#ex1 .button").addEventListener("click", () => {
 
 /* ------------------------------------ */
 /* --- Exercice 2 --- */
-setInterval (() => {
-    document.querySelector("#ex2-scroll-value").innerHTML = scrollY
-},100)
+// setInterval (() => {
+//     document.querySelector("#ex2-scroll-value").innerHTML = scrollY;
+// },100)
+window.addEventListener('scroll', () => {
+    document.querySelector("#ex2-scroll-value").innerText = (window.scrollY);
+    console.log('coucou')
+})
 
 /* ------------------------------------ */
 /* --- Exercice 3 --- */
@@ -67,7 +71,7 @@ for (let i of document.querySelectorAll(".flex-list .button")) {
 
 /* ------------------------------------ */
 /* --- Exercice 6 --- */
-textEx6 = document.querySelector("#ex6-paragraph").innerHTML
+textEx6 = document.querySelector("#ex6-paragraph").innerHTML;
 //Function for animate text 
 function animateTexte(i) {
     setTimeout(function() {
@@ -102,15 +106,21 @@ const taskList = [
 
 document.querySelector("#ex7-button").addEventListener("click", () => {
     if (taskList.length > 0) {
-    let newSection = document.createElement("li")
-    newSection.classList.toggle("task-list-task")
+    let newSection = document.createElement("li");
+    newSection.classList.toggle("task-list-task");
     newSection.innerHTML = taskList[0];
     taskList.shift()
-    document.querySelector("#ex7-list").appendChild(newSection)
-    console.log(taskList[0])
+    document.querySelector("#ex7-list").appendChild(newSection);
     }
 
 });
+document.querySelector(".li").addEventListener("click", function (event){
+    console.log(coucou)
+})
+;
+function coucou (event) {
+    console.log(coucou);
+}
 
 /* ------------------------------------ */
 /* --- Exercice 8 --- */
