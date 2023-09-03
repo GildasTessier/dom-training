@@ -124,7 +124,7 @@ let countShield = 0
 
 
 document.querySelector("#ex8-button-level").addEventListener("click", function (event) {
-    countLife += countLife === 100 ? 0 : 10;
+    countLife += countLife === 100 ? 0 : 5;
     document.querySelector("#ex8-level").style.width = countLife+"%";
 });
 document.querySelector("#ex8-button-strength").addEventListener("click", function (event) {
